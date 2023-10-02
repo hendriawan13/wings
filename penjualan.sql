@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 30, 2023 at 03:02 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Oct 02, 2023 at 06:27 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,7 +34,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -87,7 +86,7 @@ CREATE TABLE `personal_access_tokens` (
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -197,7 +196,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'hafizewp', '$2y$10$CHH9bTMoXgksVIH6R9fZlOWxHheuOhM4o7PoaZQatLm99Ln4Vh/d6', NULL, NULL);
+(1, 'hendriawan13', '$2y$10$CHH9bTMoXgksVIH6R9fZlOWxHheuOhM4o7PoaZQatLm99Ln4Vh/d6', NULL, NULL);
 
 --
 -- Indexes for dumped tables
